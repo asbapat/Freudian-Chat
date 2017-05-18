@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sendbird.android.sample">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!--android:icon="@mipmap/sendbird_ic_launcher"-->
+
+    <application
+        android:name=".main.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".main.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:label="@string/select_channel_type" />
+        <activity android:name=".utils.PhotoViewerActivity" />
+        <activity
+            android:name=".utils.MediaPlayerActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".groupchannel.InviteMemberActivity"
+            android:label="@string/invite_member" />
+        <activity
+            android:name=".groupchannel.MemberListActivity"
+            android:label="@string/member_list" />
+        <activity
+            android:name=".groupchannel.CreateGroupChannelActivity"
+            android:label="@string/create_group_channel" />
+        <activity android:name=".groupchannel.GroupChannelActivity" />
+
+        <service android:name=".fcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".fcm.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".main.MoodAnalyser" />
+        <activity android:name=".main.HomePage"></activity>
+    </application>
+
+</manifest>
